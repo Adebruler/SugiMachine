@@ -1,18 +1,19 @@
-.bg-light {
-    background-color: #82ad9b!important;
+ff1c1c.bg-light {
+    background-color: #ff1c1c!important;
   }
 
 .navbar-light .navbar-brand:link {
-      color: #82ad9b!important;
+      color: #ffffff!important;
   }
 
   .navbar-light .navbar-brand:visited {
-      color: #82ad9b!important;
+      color: #ffffff!important;
   }
 
 .navbar-brand {
-  background-color: #f2f2f2 ;
-  color: #82ad9b;
+  background-color: #ff1c1c ;
+  /* color: #ff1c1c; */
+  color: #ffffff;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 10px;
@@ -27,7 +28,7 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #f2f2f2 !important;
+  color: #ff1c1c !important;
   font-weight: bold;
 }
 
@@ -37,7 +38,7 @@ img {
 }
 
 .dropdown-item {
-  color: #82ad9b !important;
+  color: #ff1c1c !important;
   font-weight: bold;
   font-size: 13px;
 }
@@ -86,7 +87,8 @@ p {
 
 h2 {
   color: #f8f9fa;
-  background-color: #82ad9b;
+  text-align: center;
+  background-color: #ff1c1c;
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 10px;
@@ -110,7 +112,7 @@ h2 {
 
  @media (max-width: 767px) {
    .bg-light {
-     background-color: #92b7a4!important;
+     background-color: #ffffff!important;
    }
    .navbar-light .navbar-toggler {
      border-color: #FFFFFF;
@@ -142,12 +144,12 @@ h2 {
 }
 
 .btn .btn-custom {
-  background-color: #82ad9b!important;
+  background-color: #ff1c1c!important;
 
 }
 
 .btn-custom {
-  background-color: #82ad9b!important;
+  background-color: #ff1c1c!important;
 }
 
 .image-sub {
@@ -160,7 +162,7 @@ h2 {
 input[type=submit] {
   white-space: normal;
   margin-top: 15px;
-  background-color: #82ad9b!important;
+  background-color: #ff1c1c!important;
   font-size: large;
   cursor: pointer;
   color: white;

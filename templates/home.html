@@ -4,23 +4,26 @@
 <div class="container-fluid">
     <div class="row"><!--Body Content-->
 
-        <div class="col-md-7"><!-- MAIN CONTENT -->
+        <div class="col-md-5"><!-- MAIN CONTENT -->
           <div class="container-fluid" id="main">
-            <h2>Enter Your Information Here!</h2>
+            <h2>Wild Encounter</h2>
 
             <div class = "container-fluid" id="img_upload">
-            <p><img id="output" width="200"></p>
+            <p><img class="img-fluid" id="output" width="200" src="/static/images/SugimoriPokeBall.png"></p>
 
 
             <form method=post enctype=multipart/form-data>
               <p><input type=file name=file accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
-              <button type="button" class="btn btn-custom"><label class="image-sub" for="file" style="cursor: pointer;">Select An Image</label></button>
+              <p><button type="button" class="btn btn-custom"><label class="image-sub" for="file" style="cursor: pointer;">Select An Image</label></button></p>
+              <!-- <form class="form-inline mt-2 mt-md-0" onsubmit="return false"> -->
+								<input class="form-control mr-sm-2" type="text" placeholder="Give it a name!" aria-label="Search" id="pokename">
+							<!-- </form> -->
               <p><input type=submit value=Upload></p>
             </form>
           </div>
 
   <p>
-  <div class= "container-fluid" id= "form">
+  <!-- <div class= "container-fluid" id= "form">
   <form>
     <div class= "form-row">
     <div class="form-check form-check-inline">
@@ -64,34 +67,28 @@
 </div>
 </form>
 </p>
-</div>
+</div> -->
 
           </div>
         </div><!--END MAIN CONTENT -->
 
-        <div class="col-md-5"><!-- SIDE BAR -->
+        <div class="col-md-7"><!-- SIDE BAR -->
           <div class ="container-fluid" id="visual">
-          <h2>Diagnosis</h2>
+          <h2>{{wtp}}</h2>
+    <div class="thumbnail">
+          <img class="img-fluid mx-auto d-block" id="wtp" width="80%" src={{wtp_img}}>
 
-          <div class = "row">
-            <table class="table text-left">
-              <tbody>
-                <tr>
-                  <td> <strong>Our model predicts:</strong> </td>
-                  <td> {{diagnosis}} </td>
-                  <td> {{confidence}} Confidence </td>
-                </tr>
-                <tr>
-                  <td> <a href="{{info}}" target="_blank"> <strong>Click here for more info</strong> </a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="container-fluid">
-            <div class="alert alert-danger" role="alert">
-              Please note: This diagnosis has no basis in actual medical science and a doctor should always be consulted.
+            <div class="table-responsive">
+              <table class="table text-center table-borderless" width="80%">
+                <tbody>
+                  <tr>
+                    <td width="50%"><strong>{{type_1}}</strong></td>
+                    <td width="50%"><strong>{{type_2}}</strong></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </div>
+    </div>
 
           </div>
 
