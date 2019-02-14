@@ -82,6 +82,7 @@ def upload_file():
 
         if request.files.get('file'):
             file = request.files['file']
+            pokename = request.form['pokename'].title()
 
             filename = file.filename
 
@@ -98,9 +99,9 @@ def upload_file():
 
             type_1, type_2 = predicttypes(predictions)
 
-            return render_template("home.html", type_1=type_1, type_2=type_2, wtp="It's Buttso!", wtp_img=rel_filepath)
+            return render_template("home.html", vis_1="hidden", vis_2="", type_1=type_1, type_2=type_2, wtp=f"It's {pokename}!", wtp_img=rel_filepath)
 
-    return render_template("home.html", type_1=type_1, type_2=type_2, wtp="Who's That Pokémon?", wtp_img="/static/images/wtp.png")
+    return render_template("home.html", vis_1="", vis_2="hidden", type_1=type_1, type_2=type_2, wtp="Who's That Pokémon?", wtp_img="/static/images/wtp.png")
 
 
 

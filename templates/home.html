@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row"><!--Body Content-->
 
-        <div class="col-md-5"><!-- MAIN CONTENT -->
+        <div class="col-md-12 {{vis_1}}"><!-- MAIN CONTENT -->
           <div class="container-fluid" id="main">
             <h2>Wild Encounter</h2>
 
@@ -13,82 +13,36 @@
 
 
             <form method=post enctype=multipart/form-data>
-              <p><input type=file name=file accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+              <p><input type=file name=file accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;" required></p>
               <p><button type="button" class="btn btn-custom"><label class="image-sub" for="file" style="cursor: pointer;">Select An Image</label></button></p>
-              <!-- <form class="form-inline mt-2 mt-md-0" onsubmit="return false"> -->
-								<input class="form-control mr-sm-2" type="text" placeholder="Give it a name!" aria-label="Search" id="pokename">
-							<!-- </form> -->
+              <input type="text" name="pokename" placeholder="Give it a name!" aria-label="Search" id="pokename" required>
               <p><input type=submit value=Upload></p>
             </form>
           </div>
 
   <p>
-  <!-- <div class= "container-fluid" id= "form">
-  <form>
-    <div class= "form-row">
-    <div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-  <label class="form-check-label" for="inlineCheckbox1">Male</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-  <label class="form-check-label" for="inlineCheckbox2">Female</label>
-</div>
-    <div class="form-group col-md-3">
-      <label class="title" for="inputState">Location on Body</label>
-      <select id="inputState" class="form-control">
-        <option selected>Abdomen</option>
-        <option>Acral</option>
-        <option>Back</option>
-        <option>Chest</option>
-        <option>Ear</option>
-        <option>Face</option>
-        <option>Foot</option>
-        <option>Genital</option>
-        <option>Hand</option>
-        <option>Lower Extremity</option>
-        <option>Neck</option>
-        <option>Scalp</option>
-        <option>Trunk</option>
-        <option>Unknown</option>
-        <option>Upper Extremity</option>
-      </select>
-    </div>
-    <div class="form-group col-md-3">
-      <label class="title" for="inputState">Age Range</label>
-      <select id="inputState" class="form-control">
-        <option selected>0-18</option>
-        <option>19-44</option>
-        <option>45-64</option>
-        <option>65+</option>
-      </select>
-    </div>
-    <input type="submit" class="btn btn-custom"></button>
-</div>
-</form>
-</p>
-</div> -->
 
           </div>
         </div><!--END MAIN CONTENT -->
 
-        <div class="col-md-7"><!-- SIDE BAR -->
+        <div class="col-md-12 {{vis_2}}"><!-- SIDE BAR -->
           <div class ="container-fluid" id="visual">
           <h2>{{wtp}}</h2>
-    <div class="thumbnail">
-          <img class="img-fluid mx-auto d-block" id="wtp" width="80%" src={{wtp_img}}>
+    <!-- <div class="thumbnail"> -->
+          <img class="img mx-auto d-block" id="wtp" width="200" src={{wtp_img}}>
 
-            <div class="table-responsive">
-              <table class="table text-center table-borderless" width="80%">
+            <!-- <div class="table-responsive"> -->
+              <table class="table text-center table-borderless" style:"width=200">
                 <tbody>
                   <tr>
-                    <td width="50%"><strong>{{type_1}}</strong></td>
-                    <td width="50%"><strong>{{type_2}}</strong></td>
+                    <td width="100"><strong>{{type_1}}</strong></td>
+                    <td width="100"><strong>{{type_2}}</strong></td>
                   </tr>
                 </tbody>
               </table>
-            </div>
-    </div>
+              <a href="/"><div class="text-center"><button type="button" name="refresh" class ="btn btn-custom">Back</button></div></a>
+            <!-- </div> -->
+    <!-- </div> -->
 
           </div>
 
