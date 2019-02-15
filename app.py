@@ -45,8 +45,8 @@ def two_max(list):
         max_1=1
         max_2=0
     else:
-        max_1=1
-        max_2=0
+        max_1=0
+        max_2=1
 
     for i in range(2,18):
         if list[i] > list[max_1]:
@@ -55,12 +55,16 @@ def two_max(list):
         elif list[i] > list[max_2]:
             max_2=i
 
+    if list[max_2]==min(list):
+        max_2 = max_1
+
     return max_1, max_2
 
 
 
 types = ['Bug', 'Dark', 'Dragon', 'Electric', 'Fairy', 'Fighting', 'Fire', 'Flying', 'Ghost', 'Grass', 'Ground', 'Ice', 'Normal', 'Poison', 'Psychic', 'Rock', 'Steel', 'Water']
 
+type_styles = {'Normal': {'link': '/wiki/Normal_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#A8A878;'}, 'Fire': {'link': '/wiki/Fire_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#F08030;'}, 'Fighting': {'link': '/wiki/Fighting_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#C03028;'}, 'Water': {'link': '/wiki/Water_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#6890F0;'}, 'Flying': {'link': '/wiki/Flying_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#A890F0;'}, 'Grass': {'link': '/wiki/Grass_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#78C850;'}, 'Poison': {'link': '/wiki/Poison_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#A040A0;'}, 'Electric': {'link': '/wiki/Electric_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#F8D030;'}, 'Ground': {'link': '/wiki/Ground_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#E0C068;'}, 'Psychic': {'link': '/wiki/Psychic_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#F85888;'}, 'Rock': {'link': '/wiki/Rock_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#B8A038;'}, 'Ice': {'link': '/wiki/Ice_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#98D8D8;'}, 'Bug': {'link': '/wiki/Bug_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#A8B820;'}, 'Dragon': {'link': '/wiki/Dragon_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#7038F8;'}, 'Ghost': {'link': '/wiki/Ghost_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#705898;'}, 'Dark': {'link': '/wiki/Dark_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#705848;'}, 'Steel': {'link': '/wiki/Steel_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#B8B8D0;'}, 'Fairy': {'link': '/wiki/Fairy_(type)', 'style': 'border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; background:#EE99AC;'}}
 
 def predicttypes(predictions):
     """Read in list of confidence and return tuple of two types predicted"""
@@ -85,6 +89,7 @@ def upload_file():
             pokename = request.form['pokename'].title()
 
             filename = file.filename
+            print(filename)
 
             filepath = os.path.join(application.config['UPLOAD_FOLDER'], filename)
 
@@ -96,12 +101,19 @@ def upload_file():
             # results = [int(p) for p in predictions]
 
             rel_filepath=f"/static/uploads/{filename}"
+            print(rel_filepath)
 
             type_1, type_2 = predicttypes(predictions)
 
-            return render_template("home.html", vis_1="hidden", vis_2="", type_1=type_1, type_2=type_2, wtp=f"It's {pokename}!", wtp_img=rel_filepath)
+            style_1 = type_styles[type_1]['style']
+            link_1 = f"https://bulbapedia.bulbagarden.net{type_styles[type_1]['link']}"
 
-    return render_template("home.html", vis_1="", vis_2="hidden", type_1=type_1, type_2=type_2, wtp="Who's That Pokémon?", wtp_img="/static/images/wtp.png")
+            style_2 = type_styles[type_2]['style']
+            link_2 = f"https://bulbapedia.bulbagarden.net{type_styles[type_2]['link']}"
+
+            return render_template("home.html", vis_1="hidden", vis_2="", type_1=type_1, type_2=type_2, wtp=f"It's {pokename}!", wtp_img=rel_filepath,style_1=style_1,link_1=link_1,style_2=style_2,link_2=link_2)
+
+    return render_template("home.html", vis_1="", vis_2="hidden", type_1=type_1, type_2=type_2, wtp="Who's That Pokémon?", wtp_img="/static/images/wtp.png", style_1="",link_1="",style_2="",link_2="")
 
 
 
