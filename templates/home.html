@@ -3,14 +3,14 @@
 {% block body %}
 <div class="container-fluid">
     <div class="row"><!--Body Content-->
-
-        <div class="col-md-12 {{vis_1}}"><!-- MAIN CONTENT -->
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8 {{vis_1}}"><!-- MAIN CONTENT -->
           <div class="container-fluid" id="main">
             <h2>Who's That Pokémon?</h2>
 
             <div class = "container-fluid" id="img_upload">
-            <!-- <p><img class="img-fluid" id="output" width="200" src="/static/images/SugimoriPokeBall.png"></p> -->
-            <p><img class="img-fluid" id="output" width="200" src="/static/images/wtp.png"></p>
+            <p><img class="img-fluid" id="output" width="80%" src="/static/images/wtp.png" style="max-width: 200px;"></p>
 
 
             <form method=post enctype=multipart/form-data>
@@ -26,10 +26,10 @@
           </div>
         </div><!--END MAIN CONTENT -->
 
-        <div class="col-md-12 {{vis_2}}"><!-- SIDE BAR -->
+        <div class="col-md-8 {{vis_2}}"><!-- SIDE BAR -->
           <div class ="container-fluid" id="visual">
           <h2>{{wtp}}</h2>
-          <p><img class="img mx-auto d-block" id="wtp" width="200" src="{{wtp_img}}"></p>
+          <p><img class="img mx-auto d-block" id="wtp" width="80%" src="{{wtp_img}}" style="max-width: 200px;"></p>
 
             <div class="text-center">
               <table class="text-center table-borderless" align="center">
