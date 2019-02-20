@@ -17,7 +17,7 @@
 <body>
 
     <nav class="navbar navbar-expand-md navbar-light bg-light"><!-- start navbar -->
-      <a class="navbar-brand" href="/analysis">Model Analysis</a>
+      <a class="navbar-brand" href="/analysis">SugiMachine</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -45,19 +45,10 @@
 
             <div class = "container-fluid" >
 
-                <img class="visualizations" height="300" width="500" src="../static/images/predict_acc.jpg">
+                <img class="visualizations img-fluid" src="https://github.com/Adebruler/SugiMachine/blob/master/static/images/Color%20Model%20Predictions.png?raw=true">
 
 
-                <img class="visualizations" height="300" width="500" src="../static/images/patientages.jpg">
-
-
-                <img class="visualizations" height="250" width="300" src="../static/images/genders.jpg">
-
-
-                <img class="visualizations" height="300" width="500" src="../static/images/diagnosesgender.jpg">
-
-
-                <img class="visualizations" height="300" width="500" src="../static/images/predict_acc.jpg">
+                <img class="visualizations img-fluid" src="https://github.com/Adebruler/SugiMachine/blob/master/static/images/Color%20Model%20Progress.png?raw=true">
 
             </div>
 
@@ -68,72 +59,50 @@
         <div class="col-md-5"><!-- SIDE BAR -->
           <div class="container-fluid" id="visual">
           <div class="teampictures">
-          <h2>Team Members</h2>
+          <h2>Developer</h2>
 
          <div class = "row">
-            <div class="col-md-4">
+            <div class="col-md-12">
               <div class="hvrbox">
-              <img id="avatar" height="175" width="175" src="../static/images/romy.jpeg" alt="Avatar" class="hvrbox-layer_bottom">
-              <div class="hvrbox-layer_top">
-              <a href="https://github.com/RomyRobi" target="_blank"><div class="hvrbox-text">Romy</div></a>
-            </div>
-            </div>
-          </div>
-            <div class="col-md-4">
-              <div class="hvrbox">
-              <img id="avatar" height="175" width="175" src="../static/images/adam.jpeg" alt="Avatar" class="hvrbox-layer_bottom">
+              <img id="avatar" height="175" width="175" src="https://avatars3.githubusercontent.com/u/41015659?s=460&v=4" alt="Avatar" class="hvrbox-layer_bottom">
               <div class="hvrbox-layer_top">
                 <a href="https://adebruler.github.io/ADeBruler-DataAnalyst/" target="_blank"><div class="hvrbox-text">Adam</div></a>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="hvrbox">
-          <img id="avatar" height="175" width="175" src="../static/images/meghana.jpg" alt="Avatar" class="hvrbox-layer_bottom">
-          <div class="hvrbox-layer_top">
-            <a href="https://github.com/mbhimasani" target="_blank"><div class="hvrbox-text">Meghana</div></a>
-        </div>
-      </div>
-    </div>
   </div>
-          <div class = "row">
-             <div class="col-md-4">
-               <div class="hvrbox">
-               <img id="avatar" height="175" width="175" src="../static/images/mattcole.jpg" alt="Avatar" class="hvrbox-layer_bottom">
-               <div class="hvrbox-layer_top">
-               <a href="https://github.com/matthewcoleka" target="_blank"><div class="hvrbox-text">Matt</div></a>
-               </div>
-             </div>
-           </div>
-             <div class="col-md-4">
-               <div class="hvrbox">
-               <img id="avatar" height="175" width="175" src="../static/images/jimmy.jpg" alt="Avatar" class="hvrbox-layer_bottom">
-               <div class="hvrbox-layer_top">
-               <a href="https://github.com/minqiuyu" target="_blank"><div class="hvrbox-text">Jimmy</div></a>
-             </div>
-           </div>
-         </div>
-             <div class="col-md-4">
-               <div class="hvrbox">
-               <img id="avatar" height="175" width="175" src="../static/images/andres.jpg" alt="Avatar" class="hvrbox-layer_bottom">
-               <div class="hvrbox-layer_top">
-               <a href="https://github.com/AndresgPotdevin" target="_blank"><div class="hvrbox-text">Andres</div></a>
-             </div>
-             </div>
-           </div>
 
-
-
-         </div>
         </div><!-- END SIDE BAR -->
         <div class="info">
-        <h2>Overview</h2> <p>As part of our final project at the Data Science and Analytics Bootcamp at Georgia Tech, we decided to create and train a neural network using the Skin Cancer MNIST: HAM10000 dataset found on Kaggle. The dataset consists of 10,015 dermatoscopic images from different populations, with parameters of lesion_id, image_id, diagnosis (dx), diagnosis type (dx_type), age, sex, and localization of lesion.</p>
+        <h2>Background</h2>
+        <p>The SugiMachine is a recreational practice in machine learning to predict Pokémon's types based on their images (with the added bonus of assigning to types any picture you can imagine).</p>
 
-  <h2>Process</h2> <p>We used Amazon AWS RDS MySQL to host our database and AWS EC2 to create a server for our web application. We created 2 models that trained sequentially - the first is an image classification model using the skin lesion images that results in 7 outputs of dx; the second is a logistic regression model that trained on the outputs of the first model and the parameters (age, sex, localization of lesion).</p>
+        <p>The model is named after renowned manga illustrator Ken Sugimori, who is most famous for his official illustrations of Pokémon.</p>
 
-  <h2>Kaggle Dataset</h2> <p>https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000</p>
+        <p>Using Pokémon for data analysis practice was a natural choice because their a large but discrete number of Pokémon (809) that are diverse but catergorical and have many stats of their own.</p>
 
-  <h2>Original Data Source</h2>  <p>https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T • Tschandl, P., Rosendahl, C. & Kittler, H. The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesion. Sci. Data 5, 180161 (2018). doi: 10.1038/sdata.2018.161</p>
+  <h2>Process</h2>
+  <p>The model was
+    <a href="https://github.com/Adebruler/Pkmn_Img_Recognition/blob/master/Color%20Image%20Training%20-%20Small.ipynb">trained using a Keras CNN</a>
+     on Ken Sugimori's Pokémon illustrations which were
+     <a href="https://github.com/Adebruler/Pkmn_Img_Recognition/blob/master/Image%20Extract%20and%20Pokedex%20Table.ipynb">scraped from Bulbapedia using Beautiful Soup.</a></p>
+
+  <h2>Complications</h2>
+  <p>Every Pokémon has either one or two types, and it is not reasonable to assume which from a picture alone. The model was given all types during training, but keras is natively optimized to return one prediction. Sugimachine returns the top two predictions (if a second is given any confidence at all,) irrespective of the input.
+  </p>
+  <p>A reasonable modified accuracy metric returns 0.5 for each type correct on a two-type Pokémon, and returns a 1.0 if the first-guess was correct for a one-type Pokémon or 0.5 if the second-guess was correct. Otherwise 0.0 accuracy is returned. By this metric, the model is <strong>38% accurate</strong>.
+  </p>
+  <p>Because there are a relatively large number of types (18) for a relatively small number of Pokémon (809)--and because the Pokémon are diverse within their types--the model is prone to overtraining, which may be seen on the Model Progress chart to the left.
+  </p>
+
+  <h2>Future Updates</h2>
+  <p>A grayscale model has been trained and will be implemented to compare how color-dependent the current model is.
+  </p>
+  <p>A page grouping the pictures of all Pokémon by type and the accuracy of their predictions.
+  </p>
+  <p>A database of images uploaded by user with input types (verified by other users) to add to future training data.
+  </p>
+
 </div>
 
       </div>
